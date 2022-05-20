@@ -10,9 +10,10 @@ import Web3 from 'web3';
 })
 export class AppComponent {
   title = 'mewconnect';
-  connect: any
-  ethereum: any
-  web3: any
+  connect: any;
+  ethereum: any;
+  web3: any;
+  userAddress: any;
   constructor() {
     
     const NetworkEndPoints = {
@@ -42,7 +43,7 @@ export class AppComponent {
   onClick() {
     this.connect.enable().then(accounts => {
       console.log(`User's address is ${accounts[0]}`);
-      // this.userAddress = accounts[0];
+      this.userAddress = accounts[0];
     });
   }
 }
